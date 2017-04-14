@@ -1,2 +1,3 @@
 #!/bin/bash
-ghc -o run main.hs
+hsc2hs Scanner.hsc
+ghc -o run main.hs Scanner.hs -L. -lscanner
