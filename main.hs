@@ -13,7 +13,7 @@ data Nonterminal = N_SS | N_BLOCK | N_MORE_BLOCKS | N_CLASS | N_METHOD | N_MODIF
 data Terminal = IDENTIFIER| CONSTANT |  CLASS | SSALC | FORALL | FORMYSELFONLY | METHOD | DOHTEM | NUMBER |
         BOOLEAN | SEE | SHOW | IF | OTHERWISE | ONLYIF | LOOP | POOL | COPY | INTO |
         EXIT | IFNOT | NONO | NOTFALSE | NOTTRUE | AND | OR | LESS | NOTEQUAL | ADD |
-        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON
+        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON | SCANNER_END | SKIP
             deriving (Enum, Eq, Ord, Show)
 
 data Symbol = Terminal Terminal | Nonterminal Nonterminal deriving (Show)
@@ -194,41 +194,44 @@ cc_load_source stringFileName =
   withCString stringFileName $ \stringFileNameC -> do
         Scanner.c_load_source stringFileNameC
 
-scannerEnumToSymbol :: Scanner.ScannerEnum -> Terminal
+scannerEnumToSymbol :: Scanner.ScannerEnum -> Maybe Terminal
 scannerEnumToSymbol v
-    | v == Scanner.sc_identifier        = IDENTIFIER
-    | v == Scanner.sc_constant          = CONSTANT
-    | v == Scanner.sc_KW_class          = CLASS
-    | v == Scanner.sc_KW_ssalc          = SSALC 
-    | v == Scanner.sc_KW_forall         = FORALL 
-    | v == Scanner.sc_KW_formyselfonly  = FORMYSELFONLY 
-    | v == Scanner.sc_KW_method         = METHOD 
-    | v == Scanner.sc_KW_dohtem         = DOHTEM 
-    | v == Scanner.sc_KW_number         = NUMBER 
-    | v == Scanner.sc_KW_boolean        = BOOLEAN 
-    | v == Scanner.sc_KW_see            = SEE 
-    | v == Scanner.sc_KW_show           = SHOW 
-    | v == Scanner.sc_KW_if             = IF 
-    | v == Scanner.sc_KW_otherwise      = OTHERWISE 
-    | v == Scanner.sc_KW_onlyif         = ONLYIF 
-    | v == Scanner.sc_KW_loop           = LOOP 
-    | v == Scanner.sc_KW_pool           = POOL 
-    | v == Scanner.sc_KW_copy           = COPY 
-    | v == Scanner.sc_KW_into           = INTO 
-    | v == Scanner.sc_KW_exit           = EXIT 
-    | v == Scanner.sc_KW_ifnot          = IFNOT 
-    | v == Scanner.sc_KW_nono           = NONO 
-    | v == Scanner.sc_KW_notfalse       = NOTFALSE 
-    | v == Scanner.sc_KW_nottrue        = NOTTRUE 
-    | v == Scanner.sc_KW_and            = AND 
-    | v == Scanner.sc_KW_or             = OR 
-    | v == Scanner.sc_KW_less           = LESS 
-    | v == Scanner.sc_KW_notequal       = NOTEQUAL 
-    | v == Scanner.sc_KW_add            = ADD 
-    | v == Scanner.sc_SP_LPAREN         = LPAREN
-    | v == Scanner.sc_SP_RPAREN         = RPAREN
-    | v == Scanner.sc_SP_SEMICOLON      = SEMICOLON
-    | v == Scanner.sc_SP_STAR           = STAR 
+    | v == Scanner.sc_SCANNER_END       = Just SCANNER_END
+    | v == Scanner.sc_SKIP              = Just SKIP
+    | v == Scanner.sc_identifier        = Just IDENTIFIER
+    | v == Scanner.sc_constant          = Just CONSTANT
+    | v == Scanner.sc_KW_class          = Just CLASS
+    | v == Scanner.sc_KW_ssalc          = Just SSALC 
+    | v == Scanner.sc_KW_forall         = Just FORALL 
+    | v == Scanner.sc_KW_formyselfonly  = Just FORMYSELFONLY 
+    | v == Scanner.sc_KW_method         = Just METHOD 
+    | v == Scanner.sc_KW_dohtem         = Just DOHTEM 
+    | v == Scanner.sc_KW_number         = Just NUMBER 
+    | v == Scanner.sc_KW_boolean        = Just BOOLEAN 
+    | v == Scanner.sc_KW_see            = Just SEE 
+    | v == Scanner.sc_KW_show           = Just SHOW 
+    | v == Scanner.sc_KW_if             = Just IF 
+    | v == Scanner.sc_KW_otherwise      = Just OTHERWISE 
+    | v == Scanner.sc_KW_onlyif         = Just ONLYIF 
+    | v == Scanner.sc_KW_loop           = Just LOOP 
+    | v == Scanner.sc_KW_pool           = Just POOL 
+    | v == Scanner.sc_KW_copy           = Just COPY 
+    | v == Scanner.sc_KW_into           = Just INTO 
+    | v == Scanner.sc_KW_exit           = Just EXIT 
+    | v == Scanner.sc_KW_ifnot          = Just IFNOT 
+    | v == Scanner.sc_KW_nono           = Just NONO 
+    | v == Scanner.sc_KW_notfalse       = Just NOTFALSE 
+    | v == Scanner.sc_KW_nottrue        = Just NOTTRUE 
+    | v == Scanner.sc_KW_and            = Just AND 
+    | v == Scanner.sc_KW_or             = Just OR 
+    | v == Scanner.sc_KW_less           = Just LESS 
+    | v == Scanner.sc_KW_notequal       = Just NOTEQUAL 
+    | v == Scanner.sc_KW_add            = Just ADD 
+    | v == Scanner.sc_SP_LPAREN         = Just LPAREN
+    | v == Scanner.sc_SP_RPAREN         = Just RPAREN
+    | v == Scanner.sc_SP_SEMICOLON      = Just SEMICOLON
+    | v == Scanner.sc_SP_STAR           = Just STAR 
+scannerEnumToSymbol _ = Nothing
 
 compareSymbols :: Symbol -> Symbol -> Bool
 compareSymbols (Terminal a) (Terminal b) = a == b
@@ -239,31 +242,32 @@ runParser :: [Symbol] -> Maybe Terminal -> IO ()
 runParser (x:xs) Nothing = do
     t <- Scanner.c_scan
     lookahead <- return (scannerEnumToSymbol t)
-    --case lookahead of
-    --    Nothing -> do 
-    --        putStrLn "Error. indexedCFGRules returned Nothing."
-    --        return()
-    --    Just lookahead -> do
-    print "stack contents:"
-    print (x:xs)
-    print "lookahead:" 
-    print lookahead
-    case x of
-        Nonterminal nonterminalStackTop -> do
-            index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
-            print "LL(1) lookup result (as index to CFG):" 
-            print index
-            lookupResult <- return $ Map.lookup index indexedCFGRules
-            case lookupResult of
-                Nothing -> do 
-                    putStrLn "Error. indexedCFGRules returned Nothing."
-                    return()
-                Just stackTopReplacementRule -> do
-                    runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
-        Terminal terminalStackTop -> do
-            -- just pop for now.
-            putStrLn "Popping."
-            runParser xs Nothing
+
+    case lookahead of
+        Nothing -> do 
+            putStrLn "Error. indexedCFGRules returned Nothing."
+            return ()
+        Just lookahead -> do
+            print "stack contents:"
+            print (x:xs)
+            print "lookahead:" 
+            print lookahead
+            case x of
+                Nonterminal nonterminalStackTop -> do
+                    index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
+                    print "LL(1) lookup result (as index to CFG):" 
+                    print index
+                    lookupResult <- return $ Map.lookup index indexedCFGRules
+                    case lookupResult of
+                        Nothing -> do 
+                            putStrLn "Error. indexedCFGRules returned Nothing."
+                            return()
+                        Just stackTopReplacementRule -> do
+                            runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
+                Terminal terminalStackTop -> do
+                    -- just pop for now.
+                    putStrLn "Popping."
+                    runParser xs Nothing
 
 runParser (x:xs) (Just lookahead) = do
     print "stack contents:"

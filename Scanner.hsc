@@ -13,6 +13,8 @@ newtype ScannerEnum = ScannerEnum { unScanner :: CInt }
 
 -- PCRE compile options
 #{enum ScannerEnum, ScannerEnum
+  , sc_SCANNER_END      = SCANNER_END
+  , sc_SKIP             = SKIP
   , sc_identifier       = IDENTIFIER
   , sc_constant         = CONSTANT
   , sc_keyword          = KEYWORD

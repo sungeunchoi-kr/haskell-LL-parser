@@ -6,6 +6,10 @@
 
 #include <stdio.h>
 
+/* internal */
+#define SCANNER_END         -1
+#define SKIP                0
+
 /* symbol type */
 #define IDENTIFIER          1
 #define CONSTANT            2
