@@ -25,8 +25,8 @@ data Terminal = IDENTIFIER| CONSTANT |  CLASS | SSALC | FORALL | FORMYSELFONLY |
         LPAREN | RPAREN | SEMICOLON | STAR | EPSILON
             deriving (Enum, Eq, Ord, Show)
 
-data Symbol = Terminal Terminal | Nonterminal Nonterminal
-data Rule = Rule Nonterminal [Symbol]
+data Symbol = Terminal Terminal | Nonterminal Nonterminal deriving (Show)
+--data Rule = Rule Nonterminal [Symbol]
 
 --constructGrammarTable :: Nonterminal -> Symbol --Either Terminal Nonterminal
 --constructGrammarTable n
@@ -43,6 +43,9 @@ indexedCFGRules = Map.fromList(
          (1, (N_SS           , [(Nonterminal N_BLOCK), (Nonterminal N_MORE_BLOCKS)]))
         ,(2, (N_MORE_BLOCKS  , [Terminal EPSILON]))
         ,(3, (N_MORE_BLOCKS  , [(Nonterminal N_BLOCK), (Nonterminal N_MORE_BLOCKS)]))
+        ,(4, (N_BLOCK        , [(Nonterminal N_CLASS)]))
+        ,(5, (N_BLOCK        , [(Nonterminal N_METHOD)]))
+        ,(6, (N_CLASS        , [(Terminal CLASS), (Terminal IDENTIFIER), (Nonterminal N_MODIFIER), (Terminal LPAREN), (Nonterminal N_ID_LIST), (Terminal RPAREN), (Terminal SSALC)]))
     ])
 
 parseTable :: Map (Nonterminal, Terminal) Int
@@ -120,24 +123,53 @@ runParser :: [Symbol] -> Maybe Terminal -> IO ()
 runParser (x:xs) Nothing = do
     t <- Scanner.c_scan
     lookahead <- return (scannerEnumToSymbol t)
-    --print lookahead
-    --print x
+    --case lookahead of
+    --    Nothing -> do 
+    --        putStrLn "Error. indexedCFGRules returned Nothing."
+    --        return()
+    --    Just lookahead -> do
+    print "stack contents:"
+    print (x:xs)
+    print "lookahead:" 
+    print lookahead
     case x of
         Nonterminal nonterminalStackTop -> do
             index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
+            print "LL(1) lookup result (as index to CFG):" 
+            print index
             lookupResult <- return $ Map.lookup index indexedCFGRules
             case lookupResult of
                 Nothing -> do 
                     putStrLn "Error. indexedCFGRules returned Nothing."
                     return()
                 Just stackTopReplacementRule -> do
-                    runParser (snd stackTopReplacementRule ++ xs) Nothing
+                    runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
         Terminal terminalStackTop -> do
             -- just pop for now.
+            putStrLn "Popping."
             runParser xs Nothing
 
 runParser (x:xs) (Just lookahead) = do
-    runParser xs Nothing
+    print "stack contents:"
+    print (x:xs)
+    print "lookahead:" 
+    print lookahead
+    case x of
+        Nonterminal nonterminalStackTop -> do
+            index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
+            print "LL(1) lookup result (as index to CFG):" 
+            print index
+            lookupResult <- return $ Map.lookup index indexedCFGRules
+            case lookupResult of
+                Nothing -> do 
+                    putStrLn "Error. indexedCFGRules returned Nothing."
+                    return()
+                Just stackTopReplacementRule -> do
+                    runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
+        Terminal terminalStackTop -> do
+            -- just pop for now.
+            putStrLn "Popping."
+            runParser xs Nothing
 
 runParser [] _ = do
     return ()
@@ -153,5 +185,5 @@ main = do
     --if comp == True
     --    then putStrLn "1hi"
     --    else putStrLn "1hii"
-    runParser [(Nonterminal N_SS), (Nonterminal N_SS)] Nothing
+    runParser [(Nonterminal N_SS)] Nothing
 
