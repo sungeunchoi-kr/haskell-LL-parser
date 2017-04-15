@@ -248,26 +248,32 @@ runParser (x:xs) Nothing = do
             putStrLn "Error. indexedCFGRules returned Nothing."
             return ()
         Just lookahead -> do
-            print "stack contents:"
+            print "a) stack contents:"
             print (x:xs)
-            print "lookahead:" 
+            print "a) lookahead:" 
             print lookahead
-            case x of
-                Nonterminal nonterminalStackTop -> do
-                    index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
-                    print "LL(1) lookup result (as index to CFG):" 
-                    print index
-                    lookupResult <- return $ Map.lookup index indexedCFGRules
-                    case lookupResult of
-                        Nothing -> do 
-                            putStrLn "Error. indexedCFGRules returned Nothing."
-                            return()
-                        Just stackTopReplacementRule -> do
-                            runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
-                Terminal terminalStackTop -> do
-                    -- just pop for now.
-                    putStrLn "Popping."
-                    runParser xs Nothing
+            case lookahead of
+                 SKIP -> do
+                    putStrLn "skipping."
+                    runParser (x:xs) Nothing
+                 _ -> do
+                    case x of
+                        Nonterminal nonterminalStackTop -> do
+                            index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
+                            print "a) LL(1) lookup result (as index to CFG):" 
+                            print index
+                            lookupResult <- return $ Map.lookup index indexedCFGRules
+                            case lookupResult of
+                                Nothing -> do 
+                                    putStrLn "a) Error. indexedCFGRules returned Nothing."
+                                    return()
+                                Just stackTopReplacementRule -> do
+                                    runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
+                        Terminal terminalStackTop -> do
+                            -- just pop for now.
+                            putStr "a) Popping."
+                            print x
+                            runParser xs Nothing
 
 runParser (x:xs) (Just lookahead) = do
     print "stack contents:"
@@ -288,7 +294,8 @@ runParser (x:xs) (Just lookahead) = do
                     runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
         Terminal terminalStackTop -> do
             -- just pop for now.
-            putStrLn "Popping."
+            putStr "Popping."
+            print x
             runParser xs Nothing
 
 runParser [] _ = do
