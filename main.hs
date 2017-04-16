@@ -26,7 +26,7 @@ indexedCFGRules = Map.fromList(
         ,( 3, (N_MORE_BLOCKS  , [Nonterminal N_BLOCK, Nonterminal N_MORE_BLOCKS]))
         ,( 4, (N_BLOCK        , [Nonterminal N_CLASS]))
         ,( 5, (N_BLOCK        , [Nonterminal N_METHOD]))
-        ,( 6, (N_CLASS        , [(Terminal CLASS), (Terminal IDENTIFIER), (Nonterminal N_MODIFIER), (Terminal LPAREN), (Nonterminal N_ID_LIST), (Terminal RPAREN), (Terminal SSALC)]))
+        ,( 6, (N_CLASS        , [(Terminal CLASS), (Terminal IDENTIFIER), (Nonterminal N_MODIFIER), (Terminal LPAREN), (Nonterminal N_ID_LIST), (Terminal RPAREN), (Nonterminal N_METHODS), (Terminal SSALC)]))
         ,( 7, (N_MODIFIER     , [Terminal FORALL]))
         ,( 8, (N_MODIFIER     , [Terminal FORMYSELFONLY]))
         ,( 9, (N_ID_LIST      , [Terminal IDENTIFIER, Nonterminal N_MORE_IDS]))
@@ -174,6 +174,7 @@ parseTable = Map.fromList(
         ,((N_BOOL_TAIL     , LOOP         )      , 41)
         ,((N_BOOL_TAIL     , COPY         )      , 41)
         ,((N_BOOL_TAIL     , EXIT         )      , 41)
+        ,((N_BOOL_TAIL     , SEMICOLON    )      , 41)
         ,((N_BOOL_TAIL     , INTO         )      , 41)
 
         ,((N_BOOL_TAIL     , AND          )      , 42)
@@ -256,6 +257,8 @@ runParser (x:xs) Nothing = do
                  SKIP -> do
                     putStrLn "skipping."
                     runParser (x:xs) Nothing
+                 SCANNER_END -> do
+                    putStrLn "end of scanner stream."
                  _ -> do
                     case x of
                         Nonterminal nonterminalStackTop -> do
@@ -273,7 +276,15 @@ runParser (x:xs) Nothing = do
                             -- just pop for now.
                             putStr "a) Popping."
                             print x
-                            runParser xs Nothing
+                            case terminalStackTop of
+                                EPSILON -> do
+                                    runParser xs (Just lookahead)
+                                _ -> do
+                                    compresult <- return $ compareSymbols x (Terminal lookahead)
+                                    if compresult == True then
+                                        runParser xs Nothing
+                                    else
+                                        putStrLn "POP MISMATCH"
 
 runParser (x:xs) (Just lookahead) = do
     print "stack contents:"
@@ -296,7 +307,15 @@ runParser (x:xs) (Just lookahead) = do
             -- just pop for now.
             putStr "Popping."
             print x
-            runParser xs Nothing
+            case terminalStackTop of
+                EPSILON -> do
+                    runParser xs (Just lookahead)
+                _ -> do
+                    compresult <- return $ compareSymbols x (Terminal lookahead)
+                    if compresult == True then
+                        runParser xs Nothing
+                    else
+                        putStrLn "POP MISMATCH"
 
 runParser [] _ = do
     return ()
