@@ -283,8 +283,6 @@ runParser (x:xs) Nothing = do
             return ()
         _ -> do
              runParser (x:xs) (lookahead)
-        --Just lookahead -> do
-        --    runParserHelper x xs lookahead
 
 runParser (x:xs) (Just lookahead) = do
     print "stack contents:"
