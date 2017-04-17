@@ -93,3 +93,8 @@ sc_SP_STAR           = ScannerEnum 4131
 foreign import ccall "main.h scan" c_scan :: IO (ScannerEnum)
 foreign import ccall "main.h load_source" c_load_source :: CString -> IO ()
 
+load_source :: String -> IO ()
+load_source stringFileName = 
+    withCString stringFileName $ \stringFileNameC -> do
+        Scanner.c_load_source stringFileNameC
+

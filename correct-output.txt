@@ -1,0 +1,1692 @@
+Hello, World!
+"a) stack contents:"
+[Nonterminal N_SS]
+"a) lookahead:"
+CLASS
+"a) LL(1) lookup result (as index to CFG):"
+1
+"stack contents:"
+[Nonterminal N_BLOCK,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CLASS
+"LL(1) lookup result (as index to CFG):"
+4
+"stack contents:"
+[Nonterminal N_CLASS,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CLASS
+"LL(1) lookup result (as index to CFG):"
+6
+"stack contents:"
+[Terminal CLASS,Terminal IDENTIFIER,Nonterminal N_MODIFIER,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CLASS
+Popping.Terminal CLASS
+"a) stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MODIFIER,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+a) Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MODIFIER,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+FORMYSELFONLY
+"a) LL(1) lookup result (as index to CFG):"
+8
+"stack contents:"
+[Terminal FORMYSELFONLY,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+FORMYSELFONLY
+Popping.Terminal FORMYSELFONLY
+"a) stack contents:"
+[Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+LPAREN
+a) Popping.Terminal LPAREN
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+RPAREN
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+RPAREN
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+RPAREN
+Popping.Terminal RPAREN
+"a) stack contents:"
+[Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+METHOD
+"a) LL(1) lookup result (as index to CFG):"
+12
+"stack contents:"
+[Nonterminal N_METHOD,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+"LL(1) lookup result (as index to CFG):"
+15
+"stack contents:"
+[Terminal METHOD,Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+Popping.Terminal METHOD
+"a) stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+a) Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+BOOLEAN
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+BOOLEAN
+"LL(1) lookup result (as index to CFG):"
+19
+"stack contents:"
+[Nonterminal N_DECL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+BOOLEAN
+"LL(1) lookup result (as index to CFG):"
+26
+"stack contents:"
+[Nonterminal N_TYPE,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+BOOLEAN
+"LL(1) lookup result (as index to CFG):"
+28
+"stack contents:"
+[Terminal BOOLEAN,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+BOOLEAN
+Popping.Terminal BOOLEAN
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IF
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IF
+"LL(1) lookup result (as index to CFG):"
+22
+"stack contents:"
+[Nonterminal N_COND,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IF
+"LL(1) lookup result (as index to CFG):"
+31
+"stack contents:"
+[Terminal IF,Nonterminal N_BOOL_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IF
+Popping.Terminal IF
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NONO
+"a) LL(1) lookup result (as index to CFG):"
+37
+"stack contents:"
+[Terminal NONO,Nonterminal N_BOOL_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NONO
+Popping.Terminal NONO
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NOTFALSE
+"a) LL(1) lookup result (as index to CFG):"
+38
+"stack contents:"
+[Terminal NOTFALSE,Nonterminal N_BOOL_TAIL,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NOTFALSE
+Popping.Terminal NOTFALSE
+"a) stack contents:"
+[Nonterminal N_BOOL_TAIL,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEE
+"a) LL(1) lookup result (as index to CFG):"
+41
+"stack contents:"
+[Terminal EPSILON,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+Popping.Terminal EPSILON
+"stack contents:"
+[Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+20
+"stack contents:"
+[Nonterminal N_INPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+29
+"stack contents:"
+[Terminal SEE,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+Popping.Terminal SEE
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SHOW
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+21
+"stack contents:"
+[Nonterminal N_OUTPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+30
+"stack contents:"
+[Terminal SHOW,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+Popping.Terminal SHOW
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+OTHERWISE
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+OTHERWISE
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+OTHERWISE
+Popping.Terminal OTHERWISE
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SHOW
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+21
+"stack contents:"
+[Nonterminal N_OUTPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+30
+"stack contents:"
+[Terminal SHOW,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+Popping.Terminal SHOW
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEE
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+20
+"stack contents:"
+[Nonterminal N_INPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+29
+"stack contents:"
+[Terminal SEE,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+Popping.Terminal SEE
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+ONLYIF
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+ONLYIF
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+ONLYIF
+Popping.Terminal ONLYIF
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NOTTRUE
+"a) LL(1) lookup result (as index to CFG):"
+39
+"stack contents:"
+[Terminal NOTTRUE,Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NOTTRUE
+Popping.Terminal NOTTRUE
+"a) stack contents:"
+[Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+AND
+"a) LL(1) lookup result (as index to CFG):"
+42
+"stack contents:"
+[Terminal AND,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+AND
+Popping.Terminal AND
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+LESS
+"a) LL(1) lookup result (as index to CFG):"
+40
+"stack contents:"
+[Nonterminal N_TEST,Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+LESS
+"LL(1) lookup result (as index to CFG):"
+44
+"stack contents:"
+[Terminal LESS,Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+LESS
+Popping.Terminal LESS
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+CONSTANT
+"a) LL(1) lookup result (as index to CFG):"
+50
+"stack contents:"
+[Terminal CONSTANT,Nonterminal N_ARITH_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CONSTANT
+Popping.Terminal CONSTANT
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+49
+"stack contents:"
+[Terminal IDENTIFIER,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+a) Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+DOHTEM
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal DOHTEM
+"a) stack contents:"
+[Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SSALC
+"a) LL(1) lookup result (as index to CFG):"
+13
+"stack contents:"
+[Terminal EPSILON,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SSALC
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SSALC
+Popping.Terminal SSALC
+"a) stack contents:"
+[Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+METHOD
+"a) LL(1) lookup result (as index to CFG):"
+3
+"stack contents:"
+[Nonterminal N_BLOCK,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+"LL(1) lookup result (as index to CFG):"
+5
+"stack contents:"
+[Nonterminal N_METHOD,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+"LL(1) lookup result (as index to CFG):"
+15
+"stack contents:"
+[Terminal METHOD,Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+Popping.Terminal METHOD
+"a) stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+a) Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+LOOP
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+LOOP
+"LL(1) lookup result (as index to CFG):"
+23
+"stack contents:"
+[Nonterminal N_LOOP,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+LOOP
+"LL(1) lookup result (as index to CFG):"
+32
+"stack contents:"
+[Terminal LOOP,Nonterminal N_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+LOOP
+Popping.Terminal LOOP
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEE
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+20
+"stack contents:"
+[Nonterminal N_INPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+29
+"stack contents:"
+[Terminal SEE,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+Popping.Terminal SEE
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SHOW
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+21
+"stack contents:"
+[Nonterminal N_OUTPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+30
+"stack contents:"
+[Terminal SHOW,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+Popping.Terminal SHOW
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+EXIT
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+EXIT
+"LL(1) lookup result (as index to CFG):"
+25
+"stack contents:"
+[Nonterminal N_EXIT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+EXIT
+"LL(1) lookup result (as index to CFG):"
+34
+"stack contents:"
+[Terminal EXIT,Terminal IFNOT,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+EXIT
+Popping.Terminal EXIT
+"a) stack contents:"
+[Terminal IFNOT,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IFNOT
+a) Popping.Terminal IFNOT
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NOTFALSE
+"a) LL(1) lookup result (as index to CFG):"
+38
+"stack contents:"
+[Terminal NOTFALSE,Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NOTFALSE
+Popping.Terminal NOTFALSE
+"a) stack contents:"
+[Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+41
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+POOL
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+POOL
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal POOL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+POOL
+Popping.Terminal POOL
+"a) stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+a) Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+DOHTEM
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal DOHTEM,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal DOHTEM
+"a) stack contents:"
+[Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+CLASS
+"a) LL(1) lookup result (as index to CFG):"
+3
+"stack contents:"
+[Nonterminal N_BLOCK,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CLASS
+"LL(1) lookup result (as index to CFG):"
+4
+"stack contents:"
+[Nonterminal N_CLASS,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CLASS
+"LL(1) lookup result (as index to CFG):"
+6
+"stack contents:"
+[Terminal CLASS,Terminal IDENTIFIER,Nonterminal N_MODIFIER,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CLASS
+Popping.Terminal CLASS
+"a) stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MODIFIER,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+a) Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MODIFIER,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+FORALL
+"a) LL(1) lookup result (as index to CFG):"
+7
+"stack contents:"
+[Terminal FORALL,Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+FORALL
+Popping.Terminal FORALL
+"a) stack contents:"
+[Terminal LPAREN,Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+LPAREN
+a) Popping.Terminal LPAREN
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+RPAREN
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+RPAREN
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal RPAREN,Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+RPAREN
+Popping.Terminal RPAREN
+"a) stack contents:"
+[Nonterminal N_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+METHOD
+"a) LL(1) lookup result (as index to CFG):"
+12
+"stack contents:"
+[Nonterminal N_METHOD,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+"LL(1) lookup result (as index to CFG):"
+15
+"stack contents:"
+[Terminal METHOD,Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+Popping.Terminal METHOD
+"a) stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+a) Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+COPY
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+"LL(1) lookup result (as index to CFG):"
+24
+"stack contents:"
+[Nonterminal N_ASMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+"LL(1) lookup result (as index to CFG):"
+33
+"stack contents:"
+[Terminal COPY,Nonterminal N_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+Popping.Terminal COPY
+"a) stack contents:"
+[Nonterminal N_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+LPAREN
+"a) LL(1) lookup result (as index to CFG):"
+36
+"stack contents:"
+[Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+LPAREN
+"LL(1) lookup result (as index to CFG):"
+48
+"stack contents:"
+[Terminal LPAREN,Terminal IDENTIFIER,Terminal RPAREN,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+LPAREN
+Popping.Terminal LPAREN
+"a) stack contents:"
+[Terminal IDENTIFIER,Terminal RPAREN,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+a) Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Terminal RPAREN,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+RPAREN
+a) Popping.Terminal RPAREN
+"a) stack contents:"
+[Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+INTO
+a) Popping.Terminal INTO
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+DOHTEM
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal DOHTEM
+"a) stack contents:"
+[Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+METHOD
+"a) LL(1) lookup result (as index to CFG):"
+14
+"stack contents:"
+[Nonterminal N_METHOD,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+"LL(1) lookup result (as index to CFG):"
+15
+"stack contents:"
+[Terminal METHOD,Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+METHOD
+Popping.Terminal METHOD
+"a) stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+a) Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NUMBER
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NUMBER
+"LL(1) lookup result (as index to CFG):"
+19
+"stack contents:"
+[Nonterminal N_DECL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NUMBER
+"LL(1) lookup result (as index to CFG):"
+26
+"stack contents:"
+[Nonterminal N_TYPE,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NUMBER
+"LL(1) lookup result (as index to CFG):"
+27
+"stack contents:"
+[Terminal NUMBER,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NUMBER
+Popping.Terminal NUMBER
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IF
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IF
+"LL(1) lookup result (as index to CFG):"
+22
+"stack contents:"
+[Nonterminal N_COND,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IF
+"LL(1) lookup result (as index to CFG):"
+31
+"stack contents:"
+[Terminal IF,Nonterminal N_BOOL_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IF
+Popping.Terminal IF
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NOTEQUAL
+"a) LL(1) lookup result (as index to CFG):"
+40
+"stack contents:"
+[Nonterminal N_TEST,Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NOTEQUAL
+"LL(1) lookup result (as index to CFG):"
+45
+"stack contents:"
+[Terminal NOTEQUAL,Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NOTEQUAL
+Popping.Terminal NOTEQUAL
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+49
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_ARITH_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+CONSTANT
+"a) LL(1) lookup result (as index to CFG):"
+50
+"stack contents:"
+[Terminal CONSTANT,Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CONSTANT
+Popping.Terminal CONSTANT
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+COPY
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+"LL(1) lookup result (as index to CFG):"
+24
+"stack contents:"
+[Nonterminal N_ASMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+"LL(1) lookup result (as index to CFG):"
+33
+"stack contents:"
+[Terminal COPY,Nonterminal N_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+Popping.Terminal COPY
+"a) stack contents:"
+[Nonterminal N_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+STAR
+"a) LL(1) lookup result (as index to CFG):"
+36
+"stack contents:"
+[Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+STAR
+"LL(1) lookup result (as index to CFG):"
+47
+"stack contents:"
+[Terminal STAR,Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+STAR
+Popping.Terminal STAR
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+49
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+CONSTANT
+"a) LL(1) lookup result (as index to CFG):"
+50
+"stack contents:"
+[Terminal CONSTANT,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CONSTANT
+Popping.Terminal CONSTANT
+"a) stack contents:"
+[Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+INTO
+a) Popping.Terminal INTO
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+11
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SHOW
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+21
+"stack contents:"
+[Nonterminal N_OUTPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+"LL(1) lookup result (as index to CFG):"
+30
+"stack contents:"
+[Terminal SHOW,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SHOW
+Popping.Terminal SHOW
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+OTHERWISE
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+OTHERWISE
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal OTHERWISE,Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+OTHERWISE
+Popping.Terminal OTHERWISE
+"a) stack contents:"
+[Nonterminal N_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEE
+"a) LL(1) lookup result (as index to CFG):"
+16
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+20
+"stack contents:"
+[Nonterminal N_INPUT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+"LL(1) lookup result (as index to CFG):"
+29
+"stack contents:"
+[Terminal SEE,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEE
+Popping.Terminal SEE
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+COPY
+"a) LL(1) lookup result (as index to CFG):"
+18
+"stack contents:"
+[Nonterminal N_STMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+"LL(1) lookup result (as index to CFG):"
+24
+"stack contents:"
+[Nonterminal N_ASMT,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+"LL(1) lookup result (as index to CFG):"
+33
+"stack contents:"
+[Terminal COPY,Nonterminal N_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+COPY
+Popping.Terminal COPY
+"a) stack contents:"
+[Nonterminal N_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+ADD
+"a) LL(1) lookup result (as index to CFG):"
+36
+"stack contents:"
+[Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+ADD
+"LL(1) lookup result (as index to CFG):"
+46
+"stack contents:"
+[Terminal ADD,Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+ADD
+Popping.Terminal ADD
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+CONSTANT
+"a) LL(1) lookup result (as index to CFG):"
+50
+"stack contents:"
+[Terminal CONSTANT,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+CONSTANT
+Popping.Terminal CONSTANT
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+STAR
+"a) LL(1) lookup result (as index to CFG):"
+47
+"stack contents:"
+[Terminal STAR,Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+STAR
+Popping.Terminal STAR
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+49
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_ARITH_EXPR,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+49
+"stack contents:"
+[Terminal IDENTIFIER,Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Terminal INTO,Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+INTO
+a) Popping.Terminal INTO
+"a) stack contents:"
+[Nonterminal N_ID_LIST,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+IDENTIFIER
+"a) LL(1) lookup result (as index to CFG):"
+9
+"stack contents:"
+[Terminal IDENTIFIER,Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+IDENTIFIER
+Popping.Terminal IDENTIFIER
+"a) stack contents:"
+[Nonterminal N_MORE_IDS,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+10
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+ONLYIF
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+ONLYIF
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal ONLYIF,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+ONLYIF
+Popping.Terminal ONLYIF
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NONO
+"a) LL(1) lookup result (as index to CFG):"
+37
+"stack contents:"
+[Terminal NONO,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NONO
+Popping.Terminal NONO
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NOTFALSE
+"a) LL(1) lookup result (as index to CFG):"
+38
+"stack contents:"
+[Terminal NOTFALSE,Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NOTFALSE
+Popping.Terminal NOTFALSE
+"a) stack contents:"
+[Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+AND
+"a) LL(1) lookup result (as index to CFG):"
+42
+"stack contents:"
+[Terminal AND,Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+AND
+Popping.Terminal AND
+"a) stack contents:"
+[Nonterminal N_BOOL_EXPR,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+NOTTRUE
+"a) LL(1) lookup result (as index to CFG):"
+39
+"stack contents:"
+[Terminal NOTTRUE,Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+NOTTRUE
+Popping.Terminal NOTTRUE
+"a) stack contents:"
+[Nonterminal N_BOOL_TAIL,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SEMICOLON
+"a) LL(1) lookup result (as index to CFG):"
+41
+"stack contents:"
+[Terminal EPSILON,Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SEMICOLON,Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SEMICOLON
+Popping.Terminal SEMICOLON
+"a) stack contents:"
+[Nonterminal N_MORE_STMTS,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+DOHTEM
+"a) LL(1) lookup result (as index to CFG):"
+17
+"stack contents:"
+[Terminal EPSILON,Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal DOHTEM,Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+DOHTEM
+Popping.Terminal DOHTEM
+"a) stack contents:"
+[Nonterminal N_MORE_METHODS,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SSALC
+"a) LL(1) lookup result (as index to CFG):"
+13
+"stack contents:"
+[Terminal EPSILON,Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SSALC
+Popping.Terminal EPSILON
+"stack contents:"
+[Terminal SSALC,Nonterminal N_MORE_BLOCKS]
+"lookahead:"
+SSALC
+Popping.Terminal SSALC
+"a) stack contents:"
+[Nonterminal N_MORE_BLOCKS]
+"a) lookahead:"
+SCANNER_END
+end of scanner stream.
