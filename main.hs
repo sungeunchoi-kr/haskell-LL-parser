@@ -281,11 +281,10 @@ runParser (x:xs) Nothing = do
         Nothing -> do
             putStrLn "Fatal Error."
             return ()
-        --Just EPSILON -> do
-        --    putStrLn "end of scanner stream."
-        --    return ()
-        Just lookahead -> do
-            runParserHelper x xs lookahead
+        _ -> do
+             runParser (x:xs) (lookahead)
+        --Just lookahead -> do
+        --    runParserHelper x xs lookahead
 
 runParser (x:xs) (Just lookahead) = do
     print "stack contents:"
@@ -294,8 +293,13 @@ runParser (x:xs) (Just lookahead) = do
     print lookahead
     runParserHelper x xs lookahead
 
-runParser [] _ = do
-    putStrLn "Encountered stack bottom."
+runParser [] (Just EPSILON) = do
+    putStrLn "Encountered stack bottom with correct conditions."
+    return ()
+
+runParser [] t = do
+    putStr "Error: Encountered stack bottom but lookahead is not EPSILON, is "
+    print t
     return ()
 
 main = do
