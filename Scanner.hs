@@ -15,8 +15,8 @@ newtype ScannerEnum = ScannerEnum { unScanner :: CInt }
     deriving (Eq,Show)
 
 -- PCRE compile options
-sc_SCANNER_END       :: ScannerEnum
-sc_SCANNER_END       = ScannerEnum (-1)
+sc_EPSILON           :: ScannerEnum
+sc_EPSILON           = ScannerEnum (-1)
 sc_SKIP              :: ScannerEnum
 sc_SKIP              = ScannerEnum 0
 sc_identifier        :: ScannerEnum

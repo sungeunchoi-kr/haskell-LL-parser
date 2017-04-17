@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 /* internal */
-#define SCANNER_END         -1
+#define EPSILON             -1
 #define SKIP                0
 
 /* symbol type */

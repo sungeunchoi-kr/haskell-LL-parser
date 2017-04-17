@@ -13,7 +13,7 @@ data Nonterminal = N_SS | N_BLOCK | N_MORE_BLOCKS | N_CLASS | N_METHOD | N_MODIF
 data Terminal = IDENTIFIER| CONSTANT |  CLASS | SSALC | FORALL | FORMYSELFONLY | METHOD | DOHTEM | NUMBER |
         BOOLEAN | SEE | SHOW | IF | OTHERWISE | ONLYIF | LOOP | POOL | COPY | INTO |
         EXIT | IFNOT | NONO | NOTFALSE | NOTTRUE | AND | OR | LESS | NOTEQUAL | ADD |
-        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON | SCANNER_END | SKIP
+        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON | SKIP
             deriving (Enum, Eq, Ord, Show)
 
 data Symbol = Terminal Terminal | Nonterminal Nonterminal deriving (Show)
@@ -192,7 +192,7 @@ parseTable = Map.fromList(
 
 scannerEnumToSymbol :: Scanner.ScannerEnum -> Maybe Terminal
 scannerEnumToSymbol v
-    | v == Scanner.sc_SCANNER_END       = Just SCANNER_END
+    | v == Scanner.sc_EPSILON           = Just EPSILON
     | v == Scanner.sc_SKIP              = Just SKIP
     | v == Scanner.sc_identifier        = Just IDENTIFIER
     | v == Scanner.sc_constant          = Just CONSTANT
@@ -281,9 +281,9 @@ runParser (x:xs) Nothing = do
         Nothing -> do
             putStrLn "Fatal Error."
             return ()
-        Just SCANNER_END -> do
-            putStrLn "end of scanner stream."
-            return ()
+        --Just EPSILON -> do
+        --    putStrLn "end of scanner stream."
+        --    return ()
         Just lookahead -> do
             runParserHelper x xs lookahead
 
@@ -295,6 +295,7 @@ runParser (x:xs) (Just lookahead) = do
     runParserHelper x xs lookahead
 
 runParser [] _ = do
+    putStrLn "Encountered stack bottom."
     return ()
 
 main = do
