@@ -248,7 +248,6 @@ printCurrentState t l = do
 --     lookahead
 runParserHelper :: Symbol -> [Symbol] -> Terminal -> IO()
 runParserHelper (Nonterminal nonterminalStackTop) xs lookahead = do
-    printCurrentState (Nonterminal nonterminalStackTop) lookahead
     index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
     lookupResult <- return $ Map.lookup index indexedCFGRules
     case lookupResult of
@@ -262,7 +261,6 @@ runParserHelper (Terminal EPSILON) xs lookahead = do
     runParser xs (Just lookahead)
 
 runParserHelper (Terminal terminalStackTop) xs lookahead = do
-    printCurrentState (Terminal terminalStackTop) lookahead
     compresult <- return $ compareSymbols (Terminal terminalStackTop) (Terminal lookahead)
     if compresult == True then
         runParser xs Nothing
