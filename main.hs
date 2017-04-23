@@ -234,20 +234,22 @@ compareSymbols (Terminal a) (Terminal b) = a == b
 compareSymbols (Nonterminal a) (Nonterminal b) = a == b
 compareSymbols _ _ = False
 
+printCurrentState :: Symbol -> Terminal -> IO()
+printCurrentState t l = do
+    putStr "stack top:"
+    putStr . show $ t
+    putStr " |  lookahead:" 
+    putStr . show $ l
+    putStrLn ""
+
 -- parameters:
 --     top of stack
 --     rest of the stack
 --     lookahead
 runParserHelper :: Symbol -> [Symbol] -> Terminal -> IO()
 runParserHelper (Nonterminal nonterminalStackTop) xs lookahead = do
-    print "a) stack contents:"
-    print (Nonterminal nonterminalStackTop:xs)
-    print "a) lookahead:" 
-    print lookahead
-
+    printCurrentState (Nonterminal nonterminalStackTop) lookahead
     index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
-    print "a) LL(1) lookup result (as index to CFG):" 
-    print index
     lookupResult <- return $ Map.lookup index indexedCFGRules
     case lookupResult of
         Nothing -> do 
@@ -260,12 +262,7 @@ runParserHelper (Terminal EPSILON) xs lookahead = do
     runParser xs (Just lookahead)
 
 runParserHelper (Terminal terminalStackTop) xs lookahead = do
-    print "a) stack contents:"
-    print (Terminal terminalStackTop:xs)
-    print "a) lookahead:" 
-    print lookahead
-    putStr "a) Popping."
-    print terminalStackTop
+    printCurrentState (Terminal terminalStackTop) lookahead
     compresult <- return $ compareSymbols (Terminal terminalStackTop) (Terminal lookahead)
     if compresult == True then
         runParser xs Nothing
@@ -285,10 +282,7 @@ runParser (x:xs) Nothing = do
              runParser (x:xs) (lookahead)
 
 runParser (x:xs) (Just lookahead) = do
-    print "stack contents:"
-    print (x:xs)
-    print "lookahead:" 
-    print lookahead
+    printCurrentState x lookahead
     runParserHelper x xs lookahead
 
 runParser [] (Just EPSILON) = do
@@ -301,7 +295,6 @@ runParser [] t = do
     return ()
 
 main = do
-    putStrLn "Hello, World!"
     Scanner.load_source "source.ss"
     runParser [(Nonterminal N_SS)] Nothing
 
