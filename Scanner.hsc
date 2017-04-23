@@ -13,7 +13,7 @@ newtype ScannerEnum = ScannerEnum { unScanner :: CInt }
 
 -- PCRE compile options
 #{enum ScannerEnum, ScannerEnum
-  , sc_SCANNER_END      = SCANNER_END
+  , sc_EPSILON          = EPSILON
   , sc_SKIP             = SKIP
   , sc_identifier       = IDENTIFIER
   , sc_constant         = CONSTANT
@@ -53,4 +53,9 @@ newtype ScannerEnum = ScannerEnum { unScanner :: CInt }
 
 foreign import ccall "main.h scan" c_scan :: IO (ScannerEnum)
 foreign import ccall "main.h load_source" c_load_source :: CString -> IO ()
+
+load_source :: String -> IO ()
+load_source stringFileName = 
+    withCString stringFileName $ \stringFileNameC -> do
+        Scanner.c_load_source stringFileNameC
 

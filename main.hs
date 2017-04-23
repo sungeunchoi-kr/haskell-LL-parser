@@ -13,7 +13,7 @@ data Nonterminal = N_SS | N_BLOCK | N_MORE_BLOCKS | N_CLASS | N_METHOD | N_MODIF
 data Terminal = IDENTIFIER| CONSTANT |  CLASS | SSALC | FORALL | FORMYSELFONLY | METHOD | DOHTEM | NUMBER |
         BOOLEAN | SEE | SHOW | IF | OTHERWISE | ONLYIF | LOOP | POOL | COPY | INTO |
         EXIT | IFNOT | NONO | NOTFALSE | NOTTRUE | AND | OR | LESS | NOTEQUAL | ADD |
-        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON | SCANNER_END | SKIP
+        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON | SKIP
             deriving (Enum, Eq, Ord, Show)
 
 data Symbol = Terminal Terminal | Nonterminal Nonterminal deriving (Show)
@@ -190,14 +190,9 @@ parseTable = Map.fromList(
         ,((N_ARITH_EXPR    , CONSTANT     )      , 50)
     ])
 
-cc_load_source :: String -> IO ()
-cc_load_source stringFileName = 
-  withCString stringFileName $ \stringFileNameC -> do
-        Scanner.c_load_source stringFileNameC
-
 scannerEnumToSymbol :: Scanner.ScannerEnum -> Maybe Terminal
 scannerEnumToSymbol v
-    | v == Scanner.sc_SCANNER_END       = Just SCANNER_END
+    | v == Scanner.sc_EPSILON           = Just EPSILON
     | v == Scanner.sc_SKIP              = Just SKIP
     | v == Scanner.sc_identifier        = Just IDENTIFIER
     | v == Scanner.sc_constant          = Just CONSTANT
@@ -239,97 +234,67 @@ compareSymbols (Terminal a) (Terminal b) = a == b
 compareSymbols (Nonterminal a) (Nonterminal b) = a == b
 compareSymbols _ _ = False
 
+printCurrentState :: Symbol -> Terminal -> IO()
+printCurrentState t l = do
+    putStr "stack top:"
+    putStr . show $ t
+    putStr " |  lookahead:" 
+    putStr . show $ l
+    putStrLn ""
+
+-- parameters:
+--     top of stack
+--     rest of the stack
+--     lookahead
+runParserHelper :: Symbol -> [Symbol] -> Terminal -> IO()
+runParserHelper (Nonterminal nonterminalStackTop) xs lookahead = do
+    printCurrentState (Nonterminal nonterminalStackTop) lookahead
+    index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
+    lookupResult <- return $ Map.lookup index indexedCFGRules
+    case lookupResult of
+        Nothing -> do 
+            putStrLn "a) Error. indexedCFGRules returned Nothing."
+            return()
+        Just stackTopReplacementRule -> do
+            runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
+
+runParserHelper (Terminal EPSILON) xs lookahead = do
+    runParser xs (Just lookahead)
+
+runParserHelper (Terminal terminalStackTop) xs lookahead = do
+    printCurrentState (Terminal terminalStackTop) lookahead
+    compresult <- return $ compareSymbols (Terminal terminalStackTop) (Terminal lookahead)
+    if compresult == True then
+        runParser xs Nothing
+    else
+        putStrLn "POP MISMATCH"
+
+
 runParser :: [Symbol] -> Maybe Terminal -> IO ()
 runParser (x:xs) Nothing = do
     t <- Scanner.c_scan
     lookahead <- return (scannerEnumToSymbol t)
-
     case lookahead of
-        Nothing -> do 
-            putStrLn "Error. indexedCFGRules returned Nothing."
+        Nothing -> do
+            putStrLn "Fatal Error."
             return ()
-        Just lookahead -> do
-            print "a) stack contents:"
-            print (x:xs)
-            print "a) lookahead:" 
-            print lookahead
-            case lookahead of
-                 SKIP -> do
-                    putStrLn "skipping."
-                    runParser (x:xs) Nothing
-                 SCANNER_END -> do
-                    putStrLn "end of scanner stream."
-                 _ -> do
-                    case x of
-                        Nonterminal nonterminalStackTop -> do
-                            index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
-                            print "a) LL(1) lookup result (as index to CFG):" 
-                            print index
-                            lookupResult <- return $ Map.lookup index indexedCFGRules
-                            case lookupResult of
-                                Nothing -> do 
-                                    putStrLn "a) Error. indexedCFGRules returned Nothing."
-                                    return()
-                                Just stackTopReplacementRule -> do
-                                    runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
-                        Terminal terminalStackTop -> do
-                            -- just pop for now.
-                            putStr "a) Popping."
-                            print x
-                            case terminalStackTop of
-                                EPSILON -> do
-                                    runParser xs (Just lookahead)
-                                _ -> do
-                                    compresult <- return $ compareSymbols x (Terminal lookahead)
-                                    if compresult == True then
-                                        runParser xs Nothing
-                                    else
-                                        putStrLn "POP MISMATCH"
+        _ -> do
+             runParser (x:xs) (lookahead)
 
 runParser (x:xs) (Just lookahead) = do
-    print "stack contents:"
-    print (x:xs)
-    print "lookahead:" 
-    print lookahead
-    case x of
-        Nonterminal nonterminalStackTop -> do
-            index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
-            print "LL(1) lookup result (as index to CFG):" 
-            print index
-            lookupResult <- return $ Map.lookup index indexedCFGRules
-            case lookupResult of
-                Nothing -> do 
-                    putStrLn "Error. indexedCFGRules returned Nothing."
-                    return()
-                Just stackTopReplacementRule -> do
-                    runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
-        Terminal terminalStackTop -> do
-            -- just pop for now.
-            putStr "Popping."
-            print x
-            case terminalStackTop of
-                EPSILON -> do
-                    runParser xs (Just lookahead)
-                _ -> do
-                    compresult <- return $ compareSymbols x (Terminal lookahead)
-                    if compresult == True then
-                        runParser xs Nothing
-                    else
-                        putStrLn "POP MISMATCH"
+    printCurrentState x lookahead
+    runParserHelper x xs lookahead
 
-runParser [] _ = do
+runParser [] (Just EPSILON) = do
+    putStrLn "Encountered stack bottom with correct conditions."
+    return ()
+
+runParser [] t = do
+    putStr "Error: Encountered stack bottom but lookahead is not EPSILON, is "
+    print t
     return ()
 
 main = do
-    putStrLn "Hello, World!"
-    cc_load_source "source.ss"
-    --val <- return (scannerEnumToSymbol token)
-    --comp <- return (compareSymbols val (T CLASS))
-    --if token == Scanner.sc_KW_class
-    --    then putStrLn "hi"
-    --    else putStrLn "hii"
-    --if comp == True
-    --    then putStrLn "1hi"
-    --    else putStrLn "1hii"
+    Scanner.load_source "source.ss"
     runParser [(Nonterminal N_SS)] Nothing
 
