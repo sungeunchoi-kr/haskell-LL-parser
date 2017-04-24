@@ -1,4 +1,5 @@
 import Data.Map (Map)
+import Text.Printf
 import qualified Data.Map as Map
 import qualified Scanner
 
@@ -231,42 +232,70 @@ compareSymbols (Terminal a) (Terminal b) = a == b
 compareSymbols (Nonterminal a) (Nonterminal b) = a == b
 compareSymbols _ _ = False
 
-printCurrentState :: Symbol -> Terminal -> IO()
-printCurrentState t l = do
-    putStr "stack top:"
-    putStr . show $ t
-    putStr " |  lookahead:" 
-    putStr . show $ l
+printCurrentState :: Integer -> Symbol -> Terminal -> IO()
+printCurrentState i t l = do
+    str <- return $ show i
+    printOfLength str 5
+
+    str <- return $ show t
+    printOfLength str 40
+
+    str <- return $ show l
+    printOfLength str 40
+
+printTableHeading :: IO()
+printTableHeading  = do
     putStrLn ""
+    putStrLn ""
+    printOfLength "Step" 5
+    printOfLength "Stack Top" 40
+    printOfLength "Lookahead" 40
+    printOfLength "Action" 40
+    putStrLn ""
+    putStrLn "-------------------------------------------------------------------------------------------------------------"
+    str <- return $ show 1
+    printOfLength str 5
+    printOfLength "Z0" 40
+    printOfLength "-" 40
+    printOfLength "Push N_SS into stack" 40
+
+
+printOfLength :: [Char] -> Integer -> IO()
+printOfLength (x:xs) lenrem = do
+    putChar x
+    printOfLength xs (lenrem-1)
+printOfLength _ lenrem
+    | lenrem > 0 = do putStr " "; printOfLength "" (lenrem-1)
+    | lenrem <= 0 = do return ()
 
 -- parameters:
 --     top of stack
 --     rest of the stack
 --     lookahead
-runParserHelper :: Symbol -> [Symbol] -> Terminal -> IO()
-runParserHelper (Nonterminal nonterminalStackTop) xs lookahead = do
+runParserInner :: Integer -> Symbol -> [Symbol] -> Terminal -> IO()
+runParserInner i (Nonterminal nonterminalStackTop) xs lookahead = do
     index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
+    putStr "Use rule ("; putStr . show $ index; putStrLn ")";
     lookupResult <- return $ Map.lookup index indexedCFGRules
     case lookupResult of
         Nothing -> do 
             putStrLn "a) Error. indexedCFGRules returned Nothing."
             return()
         Just stackTopReplacementRule -> do
-            runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
+            runParser (i+1) ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
 
-runParserHelper (Terminal EPSILON) xs lookahead = do
-    runParser xs (Just lookahead)
-
-runParserHelper (Terminal terminalStackTop) xs lookahead = do
+runParserInner i (Terminal terminalStackTop) xs lookahead = do
     compresult <- return $ compareSymbols (Terminal terminalStackTop) (Terminal lookahead)
-    if compresult == True then
-        runParser xs Nothing
+    if compresult == True then do
+        putStr "pop and consume"
+        runParser (i+1) xs Nothing
     else
         putStrLn "POP MISMATCH"
 
 
-runParser :: [Symbol] -> Maybe Terminal -> IO ()
-runParser (x:xs) Nothing = do
+runParser :: Integer -> [Symbol] -> Maybe Terminal -> IO ()
+runParser i (x:xs) Nothing = do
+    putStrLn ""
     t <- Scanner.c_scan
     lookahead <- return (scannerEnumToSymbol t)
     case lookahead of
@@ -274,22 +303,25 @@ runParser (x:xs) Nothing = do
             putStrLn "Fatal Error."
             return ()
         _ -> do
-             runParser (x:xs) (lookahead)
+             runParser i (x:xs) (lookahead)
 
-runParser (x:xs) (Just lookahead) = do
-    printCurrentState x lookahead
-    runParserHelper x xs lookahead
+runParser i (x:xs) (Just lookahead) = do
+    printCurrentState i x lookahead
+    runParserInner i x xs lookahead
 
-runParser [] (Just EPSILON) = do
-    putStrLn "Encountered stack bottom with correct conditions."
+runParser _ [] (Just EPSILON) = do
+    putStrLn "Encountered stack bottom with epsilon lookahead. Parsing succeeded."
     return ()
 
-runParser [] t = do
+runParser _ [] t = do
     putStr "Error: Encountered stack bottom but lookahead is not EPSILON, is "
     print t
     return ()
 
 main = do
     Scanner.load_source "source.ss"
-    runParser [(Nonterminal N_SS)] Nothing
+    printTableHeading
+    runParser 2 [(Nonterminal N_SS)] Nothing
+    Scanner.c_print_symb_table
+    return ()
 
