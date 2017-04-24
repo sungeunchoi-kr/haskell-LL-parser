@@ -8,10 +8,10 @@ data Nonterminal = N_SS | N_BLOCK | N_MORE_BLOCKS | N_CLASS | N_METHOD | N_MODIF
         N_DECL | N_INPUT | N_OUTPUT | N_COND | N_LOOP | N_ASMT | N_EXIT | N_TYPE |
         N_EXPR | N_BOOL_EXPR | N_ARITH_EXPR | N_BOOL_TAIL | N_TEST deriving (Enum, Eq, Ord, Show)
 
-data Terminal = IDENTIFIER| CONSTANT |  CLASS | SSALC | FORALL | FORMYSELFONLY | METHOD | DOHTEM | NUMBER |
+data Terminal = IDENTIFIER | CONSTANT |  CLASS | SSALC | FORALL | FORMYSELFONLY | METHOD | DOHTEM | NUMBER |
         BOOLEAN | SEE | SHOW | IF | OTHERWISE | ONLYIF | LOOP | POOL | COPY | INTO |
         EXIT | IFNOT | NONO | NOTFALSE | NOTTRUE | AND | OR | LESS | NOTEQUAL | ADD |
-        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON | SKIP
+        LPAREN | RPAREN | SEMICOLON | STAR | EPSILON
             deriving (Enum, Eq, Ord, Show)
 
 data Symbol = Terminal Terminal | Nonterminal Nonterminal deriving (Show)
@@ -191,7 +191,6 @@ parseTable = Map.fromList(
 scannerEnumToSymbol :: Scanner.ScannerEnum -> Maybe Terminal
 scannerEnumToSymbol v
     | v == Scanner.sc_EPSILON           = Just EPSILON
-    | v == Scanner.sc_SKIP              = Just SKIP
     | v == Scanner.sc_identifier        = Just IDENTIFIER
     | v == Scanner.sc_constant          = Just CONSTANT
     | v == Scanner.sc_KW_class          = Just CLASS
@@ -227,6 +226,73 @@ scannerEnumToSymbol v
     | v == Scanner.sc_SP_STAR           = Just STAR 
 scannerEnumToSymbol _ = Nothing
 
+showSymbol :: Symbol -> String
+showSymbol (Terminal t)
+    | t == EPSILON        = "[epsilon]"
+    | t == IDENTIFIER     = "[id]"
+    | t == CONSTANT       = "[const]"
+    | t == CLASS          = "class (keyword)"
+    | t == SSALC          = "ssalc (keyword)"
+    | t == FORALL         = "forall (keyword)"
+    | t == FORMYSELFONLY  = "formyselfonly (keyword)"
+    | t == METHOD         = "method (keyword)"
+    | t == DOHTEM         = "dohtem (keyword)"
+    | t == NUMBER         = "number (keyword)"
+    | t == BOOLEAN        = "boolean (keyword)"
+    | t == SEE            = "see (keyword)"
+    | t == SHOW           = "show (keyword)"
+    | t == IF             = "if (keyword)"
+    | t == OTHERWISE      = "otherwise (keyword)"
+    | t == ONLYIF         = "onlyif (keyword)"
+    | t == LOOP           = "loop (keyword)"
+    | t == POOL           = "pool (keyword)"
+    | t == COPY           = "copy (keyword)"
+    | t == INTO           = "into (keyword)"
+    | t == EXIT           = "exit (keyword)"
+    | t == IFNOT          = "ifnot (keyword)"
+    | t == NONO           = "nono (keyword)"
+    | t == NOTFALSE       = "notfalse (keyword)"
+    | t == NOTTRUE        = "nottrue (keyword)"
+    | t == AND            = "and (keyword)"
+    | t == OR             = "or (keyword)"
+    | t == LESS           = "less (keyword)"
+    | t == NOTEQUAL       = "notequal (keyword)"
+    | t == ADD            = "add (keyword)"
+    | t == LPAREN         = "`(` (special)"
+    | t == RPAREN         = "`)` (special)"
+    | t == SEMICOLON      = "`;` (special)"
+    | t == STAR           = "`*` (special)"
+    | otherwise = "[???]"
+showSymbol (Nonterminal t)
+    | t == N_SS           = "<SS>"
+    | t == N_BLOCK        = "<block>"
+    | t == N_MORE_BLOCKS  = "<more_blocks>"
+    | t == N_CLASS        = "<class>"
+    | t == N_METHOD       = "<method>"
+    | t == N_MODIFIER     = "<modifier>"
+    | t == N_ID_LIST      = "<id-list>"
+    | t == N_MORE_IDS     = "<more-ids>"
+    | t == N_METHODS      = "<methods>"
+    | t == N_MORE_METHODS = "<more-methods>"
+    | t == N_STMTS        = "<stmts>"
+    | t == N_STMT         = "<stmt>"
+    | t == N_MORE_STMTS   = "<more-stmts>"
+    | t == N_DECL         = "<decl>"
+    | t == N_INPUT        = "<input>"
+    | t == N_OUTPUT       = "<output>"
+    | t == N_COND         = "<cond>"
+    | t == N_LOOP         = "<loop>"
+    | t == N_ASMT         = "<asmt>"
+    | t == N_EXIT         = "<exit>"
+    | t == N_TYPE         = "<type>"
+    | t == N_EXPR         = "<expr>"
+    | t == N_BOOL_EXPR    = "<bool-expr>"
+    | t == N_ARITH_EXPR   = "<arith-expr>"
+    | t == N_BOOL_TAIL    = "<bool-tail>"
+    | t == N_TEST         = "<test>"
+    | otherwise = "<???>"
+
+
 compareSymbols :: Symbol -> Symbol -> Bool
 compareSymbols (Terminal a) (Terminal b) = a == b
 compareSymbols (Nonterminal a) (Nonterminal b) = a == b
@@ -237,10 +303,10 @@ printCurrentState i t l = do
     str <- return $ show i
     printOfLength str 5
 
-    str <- return $ show t
+    str <- return $ showSymbol t
     printOfLength str 40
 
-    str <- return $ show l
+    str <- return $ showSymbol (Terminal l)
     printOfLength str 40
 
 printTableHeading :: IO()
@@ -275,7 +341,7 @@ printOfLength _ lenrem
 runParserInner :: Integer -> Symbol -> [Symbol] -> Terminal -> IO()
 runParserInner i (Nonterminal nonterminalStackTop) xs lookahead = do
     index <- return $ Map.findWithDefault 0 (nonterminalStackTop, lookahead) parseTable
-    putStr "Use rule ("; putStr . show $ index; putStrLn ")";
+    putStr "use rule ("; putStr . show $ index; putStrLn ")";
     lookupResult <- return $ Map.lookup index indexedCFGRules
     case lookupResult of
         Nothing -> do 
