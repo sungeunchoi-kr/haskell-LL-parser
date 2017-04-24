@@ -11,7 +11,16 @@ import Foreign.C.String
 newtype ScannerEnum = ScannerEnum { unScanner :: CInt }
     deriving (Eq,Show)
 
--- PCRE compile options
+newtype SymbolType = SymbolType { unScanner :: CInt }
+    deriving (Eq,Show)
+    
+#{enum SymbolTypeEuum, SymbolTypeEuum
+  , identifier       = IDENTIFIER
+  , constant         = CONSTANT
+  , keyword          = KEYWORD
+  , special          = KEYWORD
+}
+
 #{enum ScannerEnum, ScannerEnum
   , sc_EPSILON          = EPSILON
   , sc_SKIP             = SKIP
@@ -52,10 +61,19 @@ newtype ScannerEnum = ScannerEnum { unScanner :: CInt }
   }
 
 foreign import ccall "main.h scan" c_scan :: IO (ScannerEnum)
+--foreign import ccall "main.h scan_get_value" c_scan_get_value :: IO (String)
+--foreign import ccall "main.h scan_get_buffer" c_scan_get_buffer :: IO (String)
 foreign import ccall "main.h load_source" c_load_source :: CString -> IO ()
 
 load_source :: String -> IO ()
 load_source stringFileName = 
     withCString stringFileName $ \stringFileNameC -> do
         Scanner.c_load_source stringFileNameC
+
+--scanner_get_symbol :: IO (String)
+--scanner_get_symbol =
+--    alloca $ \returnCStrPtr -> do
+--    Scanner.c_scan returnCStrPtr
+--    value <- peekCString =<< peek returnCStrPtr
+--    return value
 

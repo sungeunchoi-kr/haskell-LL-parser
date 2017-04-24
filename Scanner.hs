@@ -91,10 +91,18 @@ sc_SP_STAR           = ScannerEnum 4131
 {-# LINE 53 "Scanner.hsc" #-}
 
 foreign import ccall "main.h scan" c_scan :: IO (ScannerEnum)
+--foreign import ccall "main.h scan_symb" c_scan_symb :: IO (String)
 foreign import ccall "main.h load_source" c_load_source :: CString -> IO ()
 
 load_source :: String -> IO ()
 load_source stringFileName = 
     withCString stringFileName $ \stringFileNameC -> do
         Scanner.c_load_source stringFileNameC
+
+--scanner_get_symbol :: IO (String)
+--scanner_get_symbol =
+--    alloca $ \returnCStrPtr -> do
+--    Scanner.c_scan returnCStrPtr
+--    value <- peekCString =<< peek returnCStrPtr
+--    return value
 

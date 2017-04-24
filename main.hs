@@ -10,7 +10,7 @@ data Nonterminal = N_SS | N_BLOCK | N_MORE_BLOCKS | N_CLASS | N_METHOD | N_MODIF
         N_DECL | N_INPUT | N_OUTPUT | N_COND | N_LOOP | N_ASMT | N_EXIT | N_TYPE |
         N_EXPR | N_BOOL_EXPR | N_ARITH_EXPR | N_BOOL_TAIL | N_TEST deriving (Enum, Eq, Ord, Show)
 
-data Terminal = IDENTIFIER| CONSTANT |  CLASS | SSALC | FORALL | FORMYSELFONLY | METHOD | DOHTEM | NUMBER |
+data Terminal = IDENTIFIER| CONSTANT | CLASS | SSALC | FORALL | FORMYSELFONLY | METHOD | DOHTEM | NUMBER |
         BOOLEAN | SEE | SHOW | IF | OTHERWISE | ONLYIF | LOOP | POOL | COPY | INTO |
         EXIT | IFNOT | NONO | NOTFALSE | NOTTRUE | AND | OR | LESS | NOTEQUAL | ADD |
         LPAREN | RPAREN | SEMICOLON | STAR | EPSILON | SKIP
@@ -257,8 +257,8 @@ runParserHelper (Nonterminal nonterminalStackTop) xs lookahead = do
         Just stackTopReplacementRule -> do
             runParser ((snd stackTopReplacementRule) ++ xs) (Just lookahead)
 
-runParserHelper (Terminal EPSILON) xs lookahead = do
-    runParser xs (Just lookahead)
+--runParserHelper (Terminal EPSILON) xs lookahead = do
+--    runParser xs (Just lookahead)
 
 runParserHelper (Terminal terminalStackTop) xs lookahead = do
     compresult <- return $ compareSymbols (Terminal terminalStackTop) (Terminal lookahead)
