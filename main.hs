@@ -1,6 +1,3 @@
-import Foreign
-import Foreign.C.Types
-import Foreign.C.String
 import Data.Map (Map)
 import qualified Data.Map as Map
 import qualified Scanner
