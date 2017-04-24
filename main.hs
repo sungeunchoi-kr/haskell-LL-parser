@@ -313,16 +313,16 @@ printTableHeading :: IO()
 printTableHeading  = do
     putStrLn ""
     putStrLn ""
-    printOfLength "Step" 5
+    printOfLength "Step"       5
     printOfLength "Stack Top" 40
     printOfLength "Lookahead" 40
-    printOfLength "Action" 40
+    printOfLength "Action"    40
     putStrLn ""
     putStrLn "-------------------------------------------------------------------------------------------------------------"
     str <- return $ show 1
-    printOfLength str 5
-    printOfLength "Z0" 40
-    printOfLength "-" 40
+    printOfLength str          5
+    printOfLength "Z0"        40
+    printOfLength "-"         40
     printOfLength "Push N_SS into stack" 40
 
 
@@ -375,8 +375,10 @@ runParser i (x:xs) (Just lookahead) = do
     printCurrentState i x lookahead
     runParserInner i x xs lookahead
 
-runParser _ [] (Just EPSILON) = do
-    putStrLn "Encountered stack bottom with epsilon lookahead. Parsing succeeded."
+runParser i [] (Just EPSILON) = do
+    str <- return $ show i
+    printOfLength str    5
+    putStrLn "{Encountered stack bottom with epsilon lookahead. Parsing succeeded.}"
     return ()
 
 runParser _ [] t = do
@@ -389,5 +391,6 @@ main = do
     printTableHeading
     runParser 2 [(Nonterminal N_SS)] Nothing
     Scanner.c_print_symb_table
+    putStrLn "Parser terminated successfully."
     return ()
 
